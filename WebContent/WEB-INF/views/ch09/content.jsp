@@ -10,8 +10,11 @@
 		<script src="<%=application.getContextPath()%>/resources/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>	
 	</head>
 	<body>
-		<h4>OutPutStream 파일 다운로드</h4>
-		<a href="download">이동</a>
-		
+		<a href="method1">method1 요청</a><br/>
+		<a href="method2">method2 요청</a><br/>
+		<a href="method3">method3 요청</a><br/>
+		<a href="method4">method4 요청</a><br/>
+		<a href="method5">method5 요청</a><br/>
+
 	</body>
 </html>
