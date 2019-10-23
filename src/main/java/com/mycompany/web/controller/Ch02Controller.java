@@ -23,7 +23,7 @@ public class Ch02Controller {
 		logger.debug("실행");
 		return "ch02/content";
 	}
-//sd
+
 	@PostMapping("/postMethod")
 	public String getPost() {
 		logger.debug("실행");
