@@ -29,7 +29,7 @@
 			<c:forEach  var="board" items="${boardList}"> <%-- items=boardList 안에 있는 갯수만큼 반복 var(변수) 에 대입해서 사용한것임--%>
 				<tr>
 					<th scope="row">${board.bno}</th>
-					<td>${board.btitle}</td>	
+					<td><a href="boardDetail?bno=${board.bno}">${board.btitle}</a></td>	
 					<td>${board.bwriter}</td>
 					<td><fmt:formatDate value="${board.bdate}" pattern="yyyy-MM-dd"/></td>
 					<td>${board.bhitcount}</td>
@@ -70,7 +70,16 @@
 					</c:if>
 				<a href="boardList?pageNo=${totalPageNum}" class="btn btn-primary">맨끝</a></div>
 		
-		<div><a href=writeBoardForm class="btn btn-warning">글쓰기</a></div>
+			<div>
+				<a href=writeBoardForm class="btn btn-warning">글쓰기</a>
+				<c:if test="${mid==null}">
+					<a href=loginForm class="btn btn-success">로그인</a>
+					<a href=join class="btn btn-success">회원가입</a>
+				</c:if>
+				<c:if test="${mid!=null}">
+					<a href=logout class="btn btn-success">로그아웃</a>
+				</c:if>
+		</div>
 	</div>
 
 	</body>

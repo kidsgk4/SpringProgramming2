@@ -34,5 +34,23 @@
 		values (#{bno}, #{btitle}, #{bcontent},#{bwriter} , 0, sysdate)
 	</insert>
 	
+	<select id="selectBoard" parameterType="int" resultType="com.mycompany.web.dto.Ch10Board">
+		select bno , btitle,bcontent,bwriter,bhitcount,bdate from board
+		where bno=#{bno}
+	</select>
+	
+	<update id="updateHitcount" parameterType="int">
+		update board set bhitcount=bhitcount+1 where bno=#{bno}
+	</update>
+	
+	<update id="updateBoard" parameterType="com.mycompany.web.dto.Ch10Board">
+		update board set btitle=#{btitle}, bcontent=#{bcontent} where bno=#{bno}
+	</update>
+	
+	<delete id="deleteBoard" parameterType="int">
+		delete from board where bno=#{bno}
+	</delete>
 	
 </mapper>
+
+

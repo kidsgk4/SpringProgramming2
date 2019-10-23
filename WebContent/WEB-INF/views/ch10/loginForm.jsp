@@ -12,16 +12,16 @@
 	<script type="text/javascript">
 		function checkForm(){
 			var result=true;
-			
+			//유효성검사
 			//모든 에러 내용 지우기
 			$(".error").text("");
 			//입력값 검사
-			if($("#btitle").val()==""){
-				$("#btitleError").text("*제목을 입력하세요");
+			if($("#mid").val()==""){
+				$("#midError").text("*아이디를 입력하세요");
 				result=false;
 			}
-			if($("#bcontent").val()==""){
-				$("#bcontentError").text("*내용을 입력하세요");
+			if($("#mpassword").val()==""){
+				$("#mpasswordError").text("*패스워드를 입력하세요");
 				result=false;
 			}
 			return result;
@@ -30,22 +30,22 @@
 	
 	</head>
 	<body>
-		<h5>게시물 입력</h5>
-			<form method="post" action="writeBoard" onsubmit="return checkForm()"> 
+		<h5>로그인</h5>
+			<form method="post" action="login" onsubmit="return checkForm()"> 
 			  	<div class="form-group">
-			    	<label for="btitle">Title</label>
-			    	<input id="btitle" name="btitle" type="text" class="form-control" placeholder="제목을 입력하세요">
-			    	<span id="btitleError" class="error" style="color:red"></span>
+			    	<label for="mid">ID</label>
+			    	<input id="mid" name="mid" type="text" class="form-control" placeholder="아이디를 입력하세요">
+			    	<span id="midError" class="error" style="color:red">${midError}</span>
 			  	</div>
 				
-			 	<div class="form-group">
-					 <label for="bcontent">Content</label>
-					 <textarea id="bcontent" name="bcontent" class="form-control" rows="3" placeholder="내용을 입력하세요"></textarea>
-					 <span id="bcontentError" class="error" style="color:red" ></span>
+				<div class="form-group">
+			    	<label for="mpassword">PASSWORD</label>
+			    	<input id="mpassword" name="mpassword" type="text" class="form-control" placeholder="패스워드를 입력하세요">
+			    	<span id="mpasswordError" class="error" style="color:red">${mpasswordError}</span>
 				</div>
 				
 				<div class="form-group">
-					<input type="submit" value="글쓰기" class="btn btn-danger"/>
+					<input type="submit" value="로그인" class="btn btn-success"/>
 				</div>
 				
 			</form>

@@ -33,10 +33,26 @@ public class Ch10BoardDao {
 		int rows=sqlSessionTemplate.insert("board.insert", board);
 		return rows;
 	}
-	
 
+	public Ch10Board selectBoard(int bno) {
+		Ch10Board board=sqlSessionTemplate.selectOne("board.selectBoard",bno);
+		return board;
+	}
 
-	
-	
+	public int updateHitcount(int bno) {
+		int rows=sqlSessionTemplate.update("board.updateHitcount",bno);
+		return rows;
+	}
+//dml을 사용할땐 인트~~~~~~~~~~~~~~반환하셈
+	public int updateBoard(Ch10Board board) {
+		int rows=sqlSessionTemplate.update("board.updateBoard",board);
+		return rows;
+		
+	}
+
+	public int deleteBoard(int bno) {
+		int rows=sqlSessionTemplate.delete("board.deleteBoard",bno);
+		return rows;
+	}
 	
 }
